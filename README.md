@@ -1,7 +1,7 @@
 # 📦 Shippo Tracking Integration – WIMO Automation
 A Node.js API that integrates with Shippo to pull tracking data, transform statuses, and handle errors—built for the WIMO automation system.
 
-## 🔗 API Used
+## API Used
 **[Shippo Tracking API](https://goshippo.com/docs/)**  
 ✓ Free test mode with sample tracking numbers  
 ✓ Simple API key auth  
@@ -14,7 +14,7 @@ A Node.js API that integrates with Shippo to pull tracking data, transform statu
 - Maps carrier statuses to: `IN_TRANSIT`, `DELIVERED`, `EXCEPTION`, `UNKNOWN`
 - Retries on timeout (once), 429 (up to 3), and handles 4xx with clear errors
 
-## 🛠 Setup
+## Setup
 1. Add your `.env` file:
 ```env
 SHIPPO_API_KEY=shippo_test_xxx
@@ -35,27 +35,27 @@ POST /api/track
 GET /api/track/shippo/SHIPPO_TRANSIT
 ```
 
-## 🔁 Error Strategy
+## Error Strategy
 | Case    | Action |
 |---------|--------|
 | Timeout | Retry once (exponential backoff) |
 | 429     | Retry 3 times max |
 | 4xx     | Return clear error message to support team |
 
-## 🚨 If We Hit Rate Limits
+## If We Hit Rate Limits
 If we exceed limits during peak hours:
 - App retries 3x, then fails gracefully with:
 ```json
 { "error": "Tracking info not yet available after retries." }
 ```
 
-## ✅ Support Plan B (No Code Change)
+## Support Plan B (No Code Change)
 Support can directly check tracking via:
 - **[Shippo Dashboard](https://apps.goshippo.com/)**
 - CSV export
 - Hosted tracking pages 
 
-## 📂 Folder Structure
+## Folder Structure
 ```
 - server.js
 - routes/trackingRoutes.js
@@ -64,7 +64,7 @@ Support can directly check tracking via:
 - utils/statusMapper.js
 ```
 
-## 📦 Sample Response
+## Sample Response
 ```json
 {
   "tracking_id": "xyz123",
