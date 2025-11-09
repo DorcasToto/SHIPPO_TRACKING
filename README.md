@@ -7,7 +7,7 @@ A Node.js API that integrates with Shippo to pull tracking data, transform statu
 ✓ Simple API key auth  
 ✓ Reliable dev sandbox  
 
-## ✅ What It Does
+## What It Does
 - Authenticates with `ShippoToken {API_KEY}`
 - Creates tracking via `POST /tracks/`
 - Retrieves status via `GET /tracks/:carrier/:tracking_number`
